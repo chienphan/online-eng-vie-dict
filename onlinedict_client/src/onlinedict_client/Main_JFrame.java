@@ -6,8 +6,12 @@ package onlinedict_client;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.UnknownHostException;
 import java.security.KeyStore;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -19,13 +23,24 @@ import javax.swing.KeyStroke;
  */
 public class Main_JFrame extends javax.swing.JFrame {
 
-    private Vector<String> vector = new Vector<String>();
+    private Data data;
+    private Vector<String> datalist;
+    private String[] mylist;
     /**
      * Creates new form Main_JFrame
      */
-    public Main_JFrame() {
+    public Main_JFrame() throws UnknownHostException, IOException {
         initComponents();
+        this.data = new Data();
+        this.datalist = new Vector<String>();
+        this.mylist = new String[WIDTH];
         
+        data.sendText("getdata");
+            this.mylist = data.receiveText().split("%");
+            for(int i = 1; i < this.mylist.length; i++){
+                this.datalist.add(this.mylist[i].toString());
+            }
+            this.jList1.setListData(datalist);
         //this.jPanel3.setVisible(true);
     }
 
@@ -71,7 +86,6 @@ public class Main_JFrame extends javax.swing.JFrame {
         setResizable(false);
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -80,6 +94,12 @@ public class Main_JFrame extends javax.swing.JFrame {
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
             }
         });
 
@@ -283,9 +303,20 @@ public class Main_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1KeyPressed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-        vector.add(this.jTextField1.getText().toString());
-        this.jList1.setListData(vector);
+        try {
+            // TODO add your handling code here:
+            this.data.sendText(this.jTextField1.getText().toString());
+            String receivetext = data.receiveText();
+            //System.out.println(receivetext);
+            if(receivetext.equals("null")){
+                this.jTextArea1.setText(" ");
+            }
+            else{
+                this.jTextArea1.setText(receivetext);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Main_JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
@@ -294,13 +325,43 @@ public class Main_JFrame extends javax.swing.JFrame {
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         // TODO add your handling code here:
-        this.jTextArea1.setText(this.jList1.getSelectedValue().toString());
+        //this.jTextArea1.setText(this.jList1.getSelectedValue().toString());
+        try {
+            // TODO add your handling code here:
+            this.data.sendText(this.jList1.getSelectedValue().toString());
+            String receivetext = data.receiveText();
+            //System.out.println(receivetext);
+            if(receivetext.equals("null")){
+                this.jTextArea1.setText(null);
+            }
+            else{
+                this.jTextArea1.setText(receivetext);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Main_JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jList1MouseClicked
 
     private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
         // TODO add your handling code here:
         this.jTextArea2.setText(this.jList2.getSelectedValue().toString());
     }//GEN-LAST:event_jList2MouseClicked
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        // TODO add your handling code here:
+        //this.jTextArea1.setText(this.jTextField1.getText());
+        Vector<String> tempVec = new Vector<String>();
+        for(int i = 0; i < this.datalist.size(); i++){
+            if(this.datalist.get(i).startsWith(this.jTextField1.getText())){
+                tempVec.add(this.datalist.get(i));
+            }
+        }
+        this.jList1.setListData(tempVec);
+    }//GEN-LAST:event_jTextField1KeyReleased
 
     /**
      * @param args the command line arguments
@@ -344,14 +405,6 @@ public class Main_JFrame extends javax.swing.JFrame {
                 
             }
         });
-    }
-
-    public Vector<String> getVector() {
-        return vector;
-    }
-
-    public void setVector(Vector<String> vector) {
-        this.vector = vector;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
