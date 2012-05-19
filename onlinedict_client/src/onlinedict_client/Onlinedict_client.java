@@ -4,8 +4,11 @@
  */
 package onlinedict_client;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +21,7 @@ public class Onlinedict_client {
      */
     public static void main(String[] args) throws UnknownHostException, IOException {
         // TODO code application logic here
+        
         Main_JFrame main_JFrame = new Main_JFrame();
         main_JFrame.setVisible(true);
         

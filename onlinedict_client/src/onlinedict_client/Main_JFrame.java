@@ -20,6 +20,8 @@ import javax.swing.*;
 import com.gtranslate.Audio;
 import com.gtranslate.Language;
 import com.gtranslate.Translator;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.io.InputStream;
 import javazoom.jl.decoder.JavaLayerException;
@@ -60,6 +62,20 @@ public class Main_JFrame extends javax.swing.JFrame {
                 this.jList2.setListData(this.logList.getLoglist());
             }
         }
+        
+        //get screen size and set position for main frame
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        Dimension screenSize = tk.getScreenSize();
+        final int WIDTH = screenSize.width;
+        final int HEIGHT = screenSize.height;
+        //System.out.println("w=" + WIDTH + " h=" + HEIGHT);
+        // Setup the frame accordingly
+        // This is assuming you are extending the JFrame //class
+        this.setLocation(WIDTH/6, HEIGHT/6);
+        
+        //set logo icon for main frame
+        String filename = "/onlinedict_client/res/translate_back.png";
+        this.setIconImage(new ImageIcon(Onlinedict_client.class.getResource(filename)).getImage());
     }
 
     /**
@@ -100,7 +116,6 @@ public class Main_JFrame extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -117,6 +132,9 @@ public class Main_JFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Từ điển Anh - Việt");
         setBackground(new java.awt.Color(0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setIconImages(null);
+        setLocationByPlatform(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -172,6 +190,7 @@ public class Main_JFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
@@ -315,7 +334,7 @@ public class Main_JFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -388,12 +407,13 @@ public class Main_JFrame extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem7);
 
-        jMenuItem8.setMnemonic('P');
-        jMenuItem8.setText("Phiên bản");
-        jMenu2.add(jMenuItem8);
-
         jMenuItem9.setMnemonic('N');
         jMenuItem9.setText("Nhóm tác giả");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem9);
 
         jMenuBar1.add(jMenu2);
@@ -682,6 +702,12 @@ public class Main_JFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        Author_JDialog author_JDialog = new Author_JDialog(this, rootPaneCheckingEnabled);
+        author_JDialog.setVisible(true);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -743,7 +769,6 @@ public class Main_JFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

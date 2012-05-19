@@ -12,12 +12,12 @@ import javax.swing.ImageIcon;
  *
  * @author Administrator
  */
-public class Help_JDialog extends javax.swing.JDialog {
+public class Author_JDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form Help_JDialog
+     * Creates new form Author_JDialog
      */
-    public Help_JDialog(java.awt.Frame parent, boolean modal) {
+    public Author_JDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         
@@ -32,7 +32,7 @@ public class Help_JDialog extends javax.swing.JDialog {
         this.setLocation(WIDTH/3, HEIGHT/3);
         
         //set icon
-        String filename = "/onlinedict_client/res/Help.png";
+        String filename = "/onlinedict_client/res/author.png";
         this.setIconImage(new ImageIcon(Onlinedict_client.class.getResource(filename)).getImage());
     }
 
@@ -45,15 +45,23 @@ public class Help_JDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Trợ giúp");
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setResizable(false);
+        setTitle("Nhóm tác giả");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Tác giả:");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setEditable(false);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Tác giả:\n   - Phan Đức Chiến - 08T2\n   - Lĩnh Khiêm - 08T2\n\nGiáo viên hướng dẫn:\n   - Tên giáo vên hướng dẫn");
+        jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("Close");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,17 +70,6 @@ public class Help_JDialog extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Trợ giúp về ứng dụng:");
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setEditable(false);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Chương trình Từ điển Anh - Việt:\n1.Chức năng:\n   - mô tả các chức năng.\n   - ...\n2.Yêu cầu sử dụng:\n   - Ứng dụng cần được kết nối Internet khi sử dụng các chức năng đọc và dịch đoạn văn.\n   - ...");
-        jScrollPane2.setViewportView(jTextArea1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,20 +77,22 @@ public class Help_JDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -128,13 +127,13 @@ public class Help_JDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Help_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Author_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Help_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Author_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Help_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Author_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Help_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Author_JDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -144,7 +143,7 @@ public class Help_JDialog extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                Help_JDialog dialog = new Help_JDialog(new javax.swing.JFrame(), true);
+                Author_JDialog dialog = new Author_JDialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 
                     @Override
@@ -159,7 +158,7 @@ public class Help_JDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
