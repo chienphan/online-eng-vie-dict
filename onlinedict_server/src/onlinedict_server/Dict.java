@@ -56,7 +56,7 @@ public class Dict extends Thread{
             this.vie = " ";
             //create connection
             Class.forName(Driver.dbClass); 
-            java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbUrl, Driver.dbUser, Driver.dbPass);
+            java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
       
             //create queries statement and assign values
             String query = "Select eng, vie from dicttable where eng = ?";
@@ -140,7 +140,7 @@ public class Dict extends Thread{
             
             //create connection
             Class.forName(Driver.dbClass); 
-            java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbUrl, Driver.dbUser, Driver.dbPass);
+            java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
       
             //create queries statement and assign values
             String query = "Select eng from dicttable ";

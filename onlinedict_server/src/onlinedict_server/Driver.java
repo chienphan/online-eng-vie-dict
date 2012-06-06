@@ -9,8 +9,10 @@ package onlinedict_server;
  * @author Phan Duc Chien
  */
 public interface Driver {
-    public static final String dbUrl = "jdbc:odbc:EVDICT";
-    public static final String dbClass = "sun.jdbc.odbc.JdbcOdbcDriver";
-    public static  final String dbUser = "";
-    public static final String dbPass = "";
+//    public static final String dbUrl = "jdbc:sqlserver://GOBOM-PC:1433";
+    public static final String dbClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+//    public static  final String dbUser = "sa";
+//    public static final String dbPass = "Gobom31249";
+//    public static final String dbDatabase = "EVDICT";
+    public static final String dbString = "jdbc:sqlserver://GOBOM-PC:1433;user=sa;password=Gobom31249;database=EVDICT";
 }
