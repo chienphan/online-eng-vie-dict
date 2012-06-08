@@ -70,7 +70,7 @@ public class Help_JDialog extends javax.swing.JDialog {
         jTextArea1.setEditable(false);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Chương trình Từ điển Anh - Việt:\n1.Chức năng:\n   - mô tả các chức năng.\n   - ...\n2.Yêu cầu sử dụng:\n   - Ứng dụng cần được kết nối Internet khi sử dụng các chức năng đọc và dịch đoạn văn.\n   - ...");
+        jTextArea1.setText("Chương trình Từ điển Anh - Việt:\n1.Chức năng:\n   - Tra từ:\n\t+ Nhập từ và nhấn phím Enter để tra.\n\t+ Click vào danh sách từ gợi ý.\n   - Nghe từ:\n\t+ Nhập từ cần nghe phát âm hoặc click vào từ gợi ý sau đó nhấp vào Button có hình cái loa.\n   - Tra đoạn văn:\n\t+ Nhập đoạn văn cần dịch, nhấp Button Dịch để dịch hay Button Đọc để đọc đoạn văn. Nhấp Button Xóa để xóa các TextBox.\n   - Lịch sử tra từ:\n\t+ Lưu lược sử tra từ của bạn, giúp bạn biết được các từ đã tra để tiện cho việc ôn tập và xem lại các từ này.\n   - Xuất dữ liệu:\n\t+ Xuất các từ bạn đã tra (trong lịch sử tra từ) ra file Excel để dể dàng trong việc xem lại và in ấn.\n\n2.Yêu cầu sử dụng:\n   - Cần thiết phải khởi chạy chương trình Server trước khi chạy chương trình Client này.\n   - Ứng dụng cần được kết nối Internet khi sử dụng các chức năng đọc và dịch đoạn văn.\n   - Máy tính cần được cài đặt CSDL SQL Server 2005 trở lên để lưu trữ dữ liệu.");
         jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -83,7 +83,7 @@ public class Help_JDialog extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
                     .addComponent(jScrollPane2))
                 .addContainerGap())
         );

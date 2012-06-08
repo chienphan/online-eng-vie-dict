@@ -59,7 +59,7 @@ public class Dict extends Thread{
             java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
       
             //create queries statement and assign values
-            String query = "Select eng, vie from dicttable where eng = ?";
+            String query = "Select eng, vie from dicttable where eng = ? order by eng";
             PreparedStatement pstm = con.prepareStatement(query);    
             pstm.setString(1, String.valueOf(eng));
             
@@ -143,7 +143,7 @@ public class Dict extends Thread{
             java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
       
             //create queries statement and assign values
-            String query = "Select eng from dicttable ";
+            String query = "Select eng from dicttable order by eng";
             PreparedStatement pstm = con.prepareStatement(query);   
             
             //execute queries
@@ -155,8 +155,7 @@ public class Dict extends Thread{
             String result = "";
             while (rs.next()) {
                 result = result + rs.getString(1) + "%";
-                //this.setEng(rs.getString(1));
-                //this.setVie(rs.getString(2));
+                
             } //end while
 
             //close connection
@@ -175,5 +174,138 @@ public class Dict extends Thread{
             System.out.println("ERR : in Dict() 2");
             return null;
         }
+    }
+    
+    public void createNew(){
+        try {
+
+        //create connection
+        Class.forName(Driver.dbClass); 
+        java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
+
+        //create queries statement and assign values
+        String query = "INSERT INTO dicttable (eng, vie) VALUES (?, ?)";
+        PreparedStatement pstm = con.prepareStatement(query);   
+        pstm.setString(1, this.eng);
+        pstm.setString(2, this.vie);
+        //execute queries
+        //ResultSet rs = pstm.executeQuery();
+        System.out.println(pstm);
+        pstm.executeUpdate();  //if this query don't return data
+
+        //close connection
+        con.close();
+        } //end try
+
+        catch(ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public boolean isInDatabase(String eng){
+        try {
+            
+            //create connection
+            Class.forName(Driver.dbClass); 
+            java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
+      
+            //create queries statement and assign values
+            String query = "Select eng from dicttable where eng = ?";
+            PreparedStatement pstm = con.prepareStatement(query);   
+            pstm.setString(1, eng);
+            //execute queries
+            ResultSet rs = pstm.executeQuery();
+
+            //pstm.executeUpdate();  //if this query don't return data
+            if(rs.next()){
+                System.out.println("t "+rs.getString(1));
+                con.close();
+                return true;
+            }
+            else{
+                System.out.println("f ");
+                con.close();
+                return false;
+                
+            }
+           
+        } //end try
+
+        catch(ClassNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        catch(SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public void delete(){
+        
+        try {
+
+        //create connection
+        Class.forName(Driver.dbClass); 
+        java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
+
+        //create queries statement and assign values
+        String query = "DELETE FROM dicttable WHERE eng = ?";
+        PreparedStatement pstm = con.prepareStatement(query);   
+        pstm.setString(1, this.eng);
+        //pstm.setString(2, this.vie);
+        //execute queries
+        //ResultSet rs = pstm.executeQuery();
+        System.out.println(pstm);
+        pstm.executeUpdate();  //if this query don't return data
+
+        //close connection
+        con.close();
+        } //end try
+
+        catch(ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void update(String oldStr){
+        
+        try {
+
+        //create connection
+        Class.forName(Driver.dbClass); 
+        java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection (Driver.dbString);
+
+        //create queries statement and assign values
+        String query = "UPDATE  dicttable SET  eng = ?, vie = ?  WHERE  eng = ?";
+        PreparedStatement pstm = con.prepareStatement(query);   
+        pstm.setString(1, this.eng);
+        pstm.setString(2, this.vie);
+        pstm.setString(3, oldStr);
+        //execute queries
+        //ResultSet rs = pstm.executeQuery();
+        System.out.println(pstm);
+        pstm.executeUpdate();  //if this query don't return data
+
+        //close connection
+        con.close();
+        } //end try
+
+        catch(ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        catch(SQLException e) {
+            e.printStackTrace();
+        }     
     }
 }

@@ -34,7 +34,7 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jLabel1" alignment="1" pref="380" max="32767" attributes="0"/>
+                  <Component id="jLabel1" alignment="1" pref="501" max="32767" attributes="0"/>
                   <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
             <Property name="editable" type="boolean" value="false"/>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Ch&#x1b0;&#x1a1;ng tr&#xec;nh T&#x1eeb; &#x111;i&#x1ec3;n Anh - Vi&#x1ec7;t:&#xa;1.Ch&#x1ee9;c n&#x103;ng:&#xa;   - m&#xf4; t&#x1ea3; c&#xe1;c ch&#x1ee9;c n&#x103;ng.&#xa;   - ...&#xa;2.Y&#xea;u c&#x1ea7;u s&#x1eed; d&#x1ee5;ng:&#xa;   - &#x1ee8;ng d&#x1ee5;ng c&#x1ea7;n &#x111;&#x1b0;&#x1ee3;c k&#x1ebf;t n&#x1ed1;i Internet khi s&#x1eed; d&#x1ee5;ng c&#xe1;c ch&#x1ee9;c n&#x103;ng &#x111;&#x1ecd;c v&#xe0; d&#x1ecb;ch &#x111;o&#x1ea1;n v&#x103;n.&#xa;   - ..."/>
+            <Property name="text" type="java.lang.String" value="Ch&#x1b0;&#x1a1;ng tr&#xec;nh T&#x1eeb; &#x111;i&#x1ec3;n Anh - Vi&#x1ec7;t:&#xa;1.Ch&#x1ee9;c n&#x103;ng:&#xa;   - Tra t&#x1eeb;:&#xa;&#x9;+ Nh&#x1ead;p t&#x1eeb; v&#xe0; nh&#x1ea5;n ph&#xed;m Enter &#x111;&#x1ec3; tra.&#xa;&#x9;+ Click v&#xe0;o danh s&#xe1;ch t&#x1eeb; g&#x1ee3;i &#xfd;.&#xa;   - Nghe t&#x1eeb;:&#xa;&#x9;+ Nh&#x1ead;p t&#x1eeb; c&#x1ea7;n nghe ph&#xe1;t &#xe2;m ho&#x1eb7;c click v&#xe0;o t&#x1eeb; g&#x1ee3;i &#xfd; sau &#x111;&#xf3; nh&#x1ea5;p v&#xe0;o Button c&#xf3; h&#xec;nh c&#xe1;i loa.&#xa;   - Tra &#x111;o&#x1ea1;n v&#x103;n:&#xa;&#x9;+ Nh&#x1ead;p &#x111;o&#x1ea1;n v&#x103;n c&#x1ea7;n d&#x1ecb;ch, nh&#x1ea5;p Button D&#x1ecb;ch &#x111;&#x1ec3; d&#x1ecb;ch hay Button &#x110;&#x1ecd;c &#x111;&#x1ec3; &#x111;&#x1ecd;c &#x111;o&#x1ea1;n v&#x103;n. Nh&#x1ea5;p Button X&#xf3;a &#x111;&#x1ec3; x&#xf3;a c&#xe1;c TextBox.&#xa;   - L&#x1ecb;ch s&#x1eed; tra t&#x1eeb;:&#xa;&#x9;+ L&#x1b0;u l&#x1b0;&#x1ee3;c s&#x1eed; tra t&#x1eeb; c&#x1ee7;a b&#x1ea1;n, gi&#xfa;p b&#x1ea1;n bi&#x1ebf;t &#x111;&#x1b0;&#x1ee3;c c&#xe1;c t&#x1eeb; &#x111;&#xe3; tra &#x111;&#x1ec3; ti&#x1ec7;n cho vi&#x1ec7;c &#xf4;n t&#x1ead;p v&#xe0; xem l&#x1ea1;i c&#xe1;c t&#x1eeb; n&#xe0;y.&#xa;   - Xu&#x1ea5;t d&#x1eef; li&#x1ec7;u:&#xa;&#x9;+ Xu&#x1ea5;t c&#xe1;c t&#x1eeb; b&#x1ea1;n &#x111;&#xe3; tra (trong l&#x1ecb;ch s&#x1eed; tra t&#x1eeb;) ra file Excel &#x111;&#x1ec3; d&#x1ec3; d&#xe0;ng trong vi&#x1ec7;c xem l&#x1ea1;i v&#xe0; in &#x1ea5;n.&#xa;&#xa;2.Y&#xea;u c&#x1ea7;u s&#x1eed; d&#x1ee5;ng:&#xa;   - C&#x1ea7;n thi&#x1ebf;t ph&#x1ea3;i kh&#x1edf;i ch&#x1ea1;y ch&#x1b0;&#x1a1;ng tr&#xec;nh Server tr&#x1b0;&#x1edb;c khi ch&#x1ea1;y ch&#x1b0;&#x1a1;ng tr&#xec;nh Client n&#xe0;y.&#xa;   - &#x1ee8;ng d&#x1ee5;ng c&#x1ea7;n &#x111;&#x1b0;&#x1ee3;c k&#x1ebf;t n&#x1ed1;i Internet khi s&#x1eed; d&#x1ee5;ng c&#xe1;c ch&#x1ee9;c n&#x103;ng &#x111;&#x1ecd;c v&#xe0; d&#x1ecb;ch &#x111;o&#x1ea1;n v&#x103;n.&#xa;   - M&#xe1;y t&#xed;nh c&#x1ea7;n &#x111;&#x1b0;&#x1ee3;c c&#xe0;i &#x111;&#x1eb7;t CSDL SQL Server 2005 tr&#x1edf; l&#xea;n &#x111;&#x1ec3; l&#x1b0;u tr&#x1eef; d&#x1eef; li&#x1ec7;u."/>
           </Properties>
         </Component>
       </SubComponents>

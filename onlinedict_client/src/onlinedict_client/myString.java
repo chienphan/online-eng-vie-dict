@@ -54,10 +54,10 @@ public class myString {
         return result;
     }
     
-    public static void main(String[] args){
-        String eol = "\n";
-        if(eol == "\n"){
-            System.out.print("ok");
-        }
-    }
+//    public static void main(String[] args){
+//        String eol = "\n";
+//        if(eol == "\n"){
+//            System.out.print("ok");
+//        }
+//    }
 }
