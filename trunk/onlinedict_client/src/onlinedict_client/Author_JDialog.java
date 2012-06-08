@@ -60,7 +60,7 @@ public class Author_JDialog extends javax.swing.JDialog {
         jTextArea1.setEditable(false);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Tác giả:\n   - Phan Đức Chiến - 08T2\n   - Lĩnh Khiêm - 08T2\n\nGiáo viên hướng dẫn:\n   - Tên giáo vên hướng dẫn");
+        jTextArea1.setText("Tác giả:\n   - Phan Đức Chiến - 08T2\n   - Lĩnh Khiêm - 08T2\n\nGiáo viên hướng dẫn:\n   - Huỳnh Công Pháp");
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("Close");

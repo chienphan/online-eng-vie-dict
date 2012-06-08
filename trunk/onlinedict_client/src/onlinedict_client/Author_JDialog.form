@@ -76,7 +76,7 @@
             <Property name="editable" type="boolean" value="false"/>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="T&#xe1;c gi&#x1ea3;:&#xa;   - Phan &#x110;&#x1ee9;c Chi&#x1ebf;n - 08T2&#xa;   - L&#x129;nh Khi&#xea;m - 08T2&#xa;&#xa;Gi&#xe1;o vi&#xea;n h&#x1b0;&#x1edb;ng d&#x1eab;n:&#xa;   - T&#xea;n gi&#xe1;o v&#xea;n h&#x1b0;&#x1edb;ng d&#x1eab;n"/>
+            <Property name="text" type="java.lang.String" value="T&#xe1;c gi&#x1ea3;:&#xa;   - Phan &#x110;&#x1ee9;c Chi&#x1ebf;n - 08T2&#xa;   - L&#x129;nh Khi&#xea;m - 08T2&#xa;&#xa;Gi&#xe1;o vi&#xea;n h&#x1b0;&#x1edb;ng d&#x1eab;n:&#xa;   - Hu&#x1ef3;nh C&#xf4;ng Ph&#xe1;p"/>
           </Properties>
         </Component>
       </SubComponents>
